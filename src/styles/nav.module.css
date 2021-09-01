@@ -1,0 +1,532 @@
+.navBar {
+  position: relative;
+  width: 100%;
+  height: 120px;
+
+  background-color: transparent;
+  overflow: hidden;
+
+	display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.gradientBorder {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+  
+  background-image: linear-gradient(to right, transparent, #00c3ff 20%, #ff0055 60%, transparent 100%);
+  animation: moveBorder 5s infinite;
+}
+@keyframes hueRotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(55deg);
+  }
+  100% {
+    filter: hue-rotate(0deg);
+  }
+}
+@keyframes moveBorder {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 110%;
+  }
+}
+
+.leftContainer {
+  width: 10%;
+  height: min-content;
+  padding-left: 25px;
+  margin-bottom: 25px;
+}
+.logoContainer {
+  position: relative;
+  width: max-content;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logoContainer .underline {
+  width: 100%;
+  bottom: -2px;
+
+  background: linear-gradient(to right, #00ccffd2, #ff00aac5, #00ccffd2);
+}
+.logoContainer:hover .underline {
+  background: linear-gradient(to right, #00ccffd2, #ff00aac5, #00ccffd2);
+}
+
+
+.logoLetter {
+  display: inline-block;
+	cursor: pointer;
+  
+	font-size: 2.2rem;
+	font-family: 'Lato';
+	font-weight: 900;
+	letter-spacing: 8px;
+
+	transition: 0.2s;
+}
+.logoLetter:nth-child(1) {
+	animation: blink 2s linear infinite;
+}
+.logoContainer .logoLetter:nth-child(1) {
+  margin-right: 2px;
+  margin-left: 3px;
+  color: #00ccffd2;
+  text-shadow: 0 0 5px #2ad4ffdc, 0 0 100px #00ccffb4;
+}
+.logoContainer .logoLetter:nth-child(2) {
+  margin-right: 1px;
+  color: #ff00aac5;
+  text-shadow: 0 0 5px #ff24b6ce, 0 0 100px #ff00aaa8;
+}
+.logoContainer .logoLetter:nth-child(3) {
+  color: #00ccffd2;
+  text-shadow: 0 0 5px #2ad4ffdc, 0 0 100px #00ccffb4;
+}
+
+
+.centerContainer {
+  margin: 10px 0;
+  align-self: center;
+}
+.linksContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.linkWraper {
+  z-index: 0;
+  position: relative;
+  margin: 0 30px;
+}
+.linkWraper div {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  padding: 5px 30px;
+ 
+  border: 3px solid #626262;
+  background-color: #080808;
+  border-radius: 10px;
+
+  font-family: 'Nocturne';
+  font-size: 2rem;
+  font-weight: 600;
+}
+.linkWraper div span {
+  position: relative;
+}
+.underline {
+  position: absolute !important;
+  display: block;
+  left: 0;
+  bottom: -1px;
+  width: 0;
+  height: 3px;
+
+  border-radius: 10px;
+
+  transition: all 0.25s;
+}
+.wire {
+  z-index: -1;
+  position: absolute;
+  left: 50%;
+  bottom: 80%;
+  transform: translateX(-50%);
+
+  display: block;
+  height: 80px;
+  width: 3px;
+}
+
+.linkWraper div:hover .underline {
+  width: 100%;
+}
+
+.homeLinkWraper div {
+  /* rotate: 8deg; */
+  color: #c5ff6d;
+	text-shadow: 0 0 5px #adff2faa, 0 0 20px #adff2f55, 0 0 50px #adff2f66;
+}
+.homeLink .underline {
+  background-color: #c5ff6d;
+	box-shadow: 0 0 5px #adff2faa, 0 0 20px #adff2f55, 0 0 50px #adff2f66;
+}
+.homeWire {
+  background: linear-gradient(to top, #c5ff6d, #c5ff6d46);
+	box-shadow: 0 0 5px #adff2faa, 0 0 20px #adff2f55, 0 0 50px #adff2f66;
+}
+/* .homeLink:hover {
+  animation: moveHomeLink 0.5s 0.4s forwards cubic-bezier(0.260, 0.195, 0.470, 1.650);
+} */
+@keyframes moveHomeLink {
+  0% {
+    transform: rotate(8deg);
+  }
+  50% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(8deg);
+  }
+}
+
+.minesweeperLinkWraper div {
+  /* transform: rotate(-5deg); */
+  color: #72ff6d;
+	text-shadow: 0 0 5px #35ff2eaa, 0 0 20px #35ff2e55, 0 0 50px #35ff2e66;
+}
+.minesweeperLink .underline {
+  background-color: #72ff6d;
+	box-shadow: 0 0 5px #35ff2eaa, 0 0 20px #35ff2e55, 0 0 50px #35ff2e66;
+}
+.minesweeperWire {
+  background: linear-gradient(to top, #72ff6d, #72ff6d46);
+	box-shadow: 0 0 5px #35ff2eaa, 0 0 20px #35ff2e55, 0 0 50px #35ff2e66;
+}
+/* .minesweeperLink:hover {
+  animation: moveMinesweeperLink 0.5s 0.4s forwards cubic-bezier(0.260, 0.195, 0.470, 1.650);
+} */
+@keyframes moveMinesweeperLink {
+  0% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+  100% {
+    transform: rotate(-5deg);
+  }
+}
+
+.snakeLinkWraper div {
+  color: #6affb9;
+	text-shadow: 0 0 5px #2eff9daa, 0 0 20px #2eff9d55, 0 0 50px #2eff9d66;
+}
+.snakeLink .underline {
+  background-color: #6affb9;
+	box-shadow: 0 0 5px #2eff9daa, 0 0 20px #2eff9d55, 0 0 50px #2eff9d66;
+}
+.snakeWire {
+  background: linear-gradient(to top, #6affb9, #6affb946);
+	box-shadow: 0 0 5px #2eff9daa, 0 0 20px #2eff9d55, 0 0 50px #2eff9d66;
+}
+/* .snakeLink:hover {
+  animation: moveSnakeLink 0.5s 0.4s forwards cubic-bezier(0.260, 0.195, 0.470, 1.650);
+} */
+@keyframes moveSnakeLink {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(4deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.moreGamesLinkWraper div {
+  /* rotate: 7deg; */
+  color: #68ffeb;
+	text-shadow: 0 0 5px #2effe3aa, 0 0 20px #2effe355, 0 0 80px #2effe366;
+}
+.moreGamesLink .underline {
+  background-color: #68ffeb;
+	box-shadow: 0 0 5px #2effe3aa, 0 0 20px #2effe355, 0 0 50px #2effe366;
+}
+.moreGamesWire {
+  background: linear-gradient(to top, #68ffeb, #68ffeb46);
+	box-shadow: 0 0 5px #2effe3aa, 0 0 20px #2effe355, 0 0 50px #2effe366;
+}
+/* .moreGamesLink:hover {
+  animation: moveMoreGamesLink 0.5s 0.4s forwards cubic-bezier(0.260, 0.195, 0.470, 1.650);
+} */
+@keyframes moveMoreGamesLink {
+  0% {
+    transform: rotate(7deg);
+  }
+  50% {
+    transform: rotate(1deg);
+  }
+  100% {
+    transform: rotate(7deg);
+  }
+}
+
+.rightContainer {
+  z-index: 5;
+  width: 10%;
+  height: min-content;
+  padding-right: 25px;
+}
+.userProfileContainer {
+  position: relative;
+  text-align: center;
+  border-radius: 10px;
+}
+.profileImg {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 10px;
+
+  border: 2px solid #414141;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00ccff00, 0 0 20px #00ccff00;
+
+  transition: all 0.3s;
+}
+.profileImg:hover {
+  border: 2px solid #00ccff;
+  box-shadow: 0 0 10px #00ccffa4, 0 0 20px #00ccff80;
+}
+.profileName {
+  user-select: none;
+  font-family: 'Lato';
+  font-size: 1rem;
+  font-weight: 700;
+  color: #414141;
+  text-shadow: 0 0 5px #00ccff00, #00ccff00;
+
+  transition: all 0.3s;
+}
+.profileImg:hover ~ .profileName {
+  color: #74e3ff;
+  text-shadow: 0 0 5px #00ccff, 0 0 10px #00ccff;
+}
+
+.noUserProfileContainer {
+  cursor: pointer;
+  margin-bottom: 25px;
+  text-align: center;
+  border: 3px solid #626262;
+  background-color: #08080857;
+  padding: 10px;
+  overflow: hidden;
+  border-radius: 10px;
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.noUserProfileContainer i {
+  user-select: none;
+  font-size: 1.6rem;
+  color: #8affef;
+  text-shadow: 0 0 5px #2effe3, 0 0 10px #2effe3;
+
+  margin-right: 20px;
+}
+.noUserProfileContainer span {
+  user-select: none;
+  font-family: 'Lato';
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #8affef;
+  text-shadow: 0 0 5px #2effe3, 0 0 10px #2effe3;
+}
+.userProfileContainer .underline {
+  width: 100%;
+  bottom: -8px;
+
+  background: linear-gradient(to right, #00ccffd2, #ff00aac5, #00ccffd2);
+}
+
+
+/* PROFILE PANEL */
+.profilePanel {
+  display: none;
+  z-index: 5;
+  position: absolute;
+  top: 140px;
+  right: 20px;
+  transform: translate(calc(100% + 100px));
+
+  width: 12%;
+  height: 50%;
+  padding: 0 10px;
+
+  background-color: #0c0c0cd7;
+  backdrop-filter: blur(10px);
+  border: 3px solid #74e3ff;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #74e3ffaa, 0 0 20px #74e3ff55, 0 0 50px #74e3ff3d;
+
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.showProfilePanel {
+  display: block;
+  transform: translateX(0);
+}
+.backgroundDimmer {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+
+  background-color: #00000000;
+  transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.activeBackgroundDimmer {
+  pointer-events: all;
+  background-color: #000000a4;
+}
+
+.profilePanel .profilePanelItem {
+  position: relative;
+  cursor: pointer;
+  width: max-content;
+  margin: 25px auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #ff8800;
+  text-shadow: 0 0 5px #ff8800be, 0 0 20px #ff8800c2;
+
+}
+.profilePanel .profilePanelItem .underline {
+  bottom: -6px;
+  height: 3px;
+  background-color: #ff8800;
+  box-shadow: 0 0 5px #ff8800aa, 0 0 20px #ff880055;
+}
+.profilePanel .profilePanelItem:hover .underline {
+  width: 100%;
+}
+.profilePanel .profilePanelItem span {
+  font-weight: 600;
+  font-family: 'Lato';
+  font-size: 1.4rem;
+}
+.profilePanel .profilePanelItem i {
+  font-weight: 900;
+  margin-left: 15px;
+  font-size: 1.2rem;
+}
+
+.profilePanelSeparator {
+  display: block;
+  margin: 0 auto;
+
+  width: 90%;
+  height: 2px;
+  border-radius: 10px;
+
+  background-color: #74e3ff;
+  box-shadow: 0 0 5px #74e3ffaa, 0 0 20px #74e3ff55, 0 0 40px #74e3ff66;
+}
+
+@media screen and (max-width: 1200px) {
+  .linkWraper {
+    margin: 0 15px;
+  }
+  .linkWraper div {
+    padding: 5px 30px;
+    border: 2px solid #626262;
+    font-size: 1.7rem;
+    font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .logoLetter {
+    font-size: 2rem;
+    letter-spacing: 4px;
+  }
+
+  .leftContainer {
+    width: max-content;
+  }
+  .rightContainer {
+    width: max-content;
+  }
+  .centerContainer {
+    margin: 0px 0;
+  }
+
+  .linkWraper {
+    margin: 0 15px;
+  }
+  .linkWraper div {
+    padding: 5px 15px;
+    border: 2px solid #626262;
+    font-size: 1.6rem;
+  }
+
+  .profileImg {
+    width: 45px;
+    height: 45px;
+    margin: 0 auto 8px;
+  }
+  .profileName {
+    font-size: 0.9rem;
+  }
+
+  .noUserProfileContainer {
+    border: 2px solid #626262;
+    padding: 10px;
+  }
+  .noUserProfileContainer span {
+    font-size: 1.1rem;
+  }
+  .noUserProfileContainer i {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .centerContainer {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .navBar {
+    height: 80px;
+  }
+  .leftContainer {
+    margin-bottom: 0;
+  }
+  .logoLetter {
+    font-size: 1.8rem;
+    letter-spacing: 3px;
+  }
+  .profileImg {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 8px;
+  }
+  .profileName {
+    font-size: 0.8rem;
+  }
+  .noUserProfileContainer {
+    margin-bottom: 0;
+    padding: 10px;
+  }
+  .noUserProfileContainer span {
+    font-size: 1rem;
+  }
+  .noUserProfileContainer i {
+    font-size: 1.2rem;
+  }
+}

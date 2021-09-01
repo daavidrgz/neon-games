@@ -1,0 +1,252 @@
+.homeContainer {
+  height: 100vh;
+  width: 100vw;
+  /* radial-gradient(transparent, #6f4c92) */
+  background-image: linear-gradient(#000000c0, #000000c0), url("../assets/bricks.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+  padding-top: 150px;
+
+  animation: fadeIn 1s forwards;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.titleTextContainer {
+  user-select: none;
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.titleText {
+  display: block;
+  text-align: center;
+  width: 100%;
+
+  font-size: 9rem;
+  font-weight: 800;
+  opacity: 0;
+
+  letter-spacing: 10px;
+  font-family: "Nocturne";
+}
+
+#theText {
+  color: #00ccff;
+  text-shadow: 0 0 5px #00ccff, 0 0 100px #00ccffb4;
+}
+
+#neonText {
+  color: #ff00aa;
+  text-shadow: 0 0 5px #ff00aa, 0 0 100px #ff00aaa8;
+}
+
+#gamesText {
+  color: #00ccff;
+  text-shadow: 0 0 5px #00ccff, 0 0 100px #00ccffb4;
+
+  /* animation: blink-blue 3s cubic-bezier(0.165, 0.84, 0.44, 1) infinite; */
+}
+
+@keyframes blink-blue {
+  0% {
+    text-shadow: 0 0 10px #00ccffbb;
+  }
+  20% {
+    text-shadow: 0 0 10px #00ccff;
+  }
+  40% {
+    text-shadow: 0 0 15px #00ccff;
+  }
+  60% {
+    text-shadow: 0 0 15px #00ccffbb;
+  }
+  90% {
+    text-shadow: 0 0 10px #00ccff;
+  }
+  100% {
+    text-shadow: 0 0 10px #00ccffbb;
+  }
+}
+
+
+.buttonContainer {
+  margin-top: 120px;
+  text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.startPlayingBtn {
+  display: inline-block;
+	cursor: pointer;
+	text-align: center;
+  width: max-content;
+  padding: 15px 20px;
+  margin-bottom: 60px;
+
+	border-radius: 100px;
+	background-color: #0c0c0c;
+	border: 3px solid #626262;
+
+  text-transform: uppercase;
+	font-family: 'Lato';
+  font-size: 1rem;
+	letter-spacing: 3px;
+	font-weight: 600;
+	color: #626262;
+
+	transition: all 0.2s;
+}
+.startPlayingBtn:hover {
+  letter-spacing: 5px;
+  animation: hueRotate 5s cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
+
+	border-color: #44ff8c;
+	box-shadow: 0 0 5px #00ff88, 0 0 15px #00ff88;
+
+	color: #53ffaf;
+	text-shadow: 0 0 5px #00ff55, 0 0 30px #00ff55;
+}
+@keyframes hueRotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+#neonOpenImg {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  transform: rotate(-8deg);
+  filter: hue-rotate(50deg);
+
+  width: 30vw;
+  height: 30vw;
+}
+
+
+.googleAuthBtn {
+	cursor: pointer;
+  padding: 15px 20px;
+  width: max-content;
+
+	border-radius: 100px;
+	background-color: #0c0c0c;
+	border: 3px solid #626262;
+
+  text-transform: uppercase;
+	font-family: 'Lato';
+	letter-spacing: 3px;
+  font-size: 1rem;
+	font-weight: 600;
+	color: #626262;
+
+	transition: all 0.2s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.googleAuthBtn:hover {
+  letter-spacing: 5px;
+
+	border-color: #db4437;
+	box-shadow: 0 0 5px #db4437, 0 0 15px #db4437;
+
+	color: white;
+	text-shadow: 0 0 5px white, 0 0 30px white;
+}
+.googleAuthBtn span {
+  display: inline-block;
+}
+.googleAuthBtn i {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 1.4rem;
+  font-weight: 900;
+}
+
+
+@media screen and (max-width: 992px) {
+  .titleText {
+    font-size: 8rem;
+  }
+
+  #neonOpenImg {
+    left: -50px;
+    width: 40vh;
+  }
+  .buttonContainer {
+    margin-top: 70px;
+  }
+  .startPlayingBtn {
+    font-size: 0.9rem;
+    padding: 12px 19px;
+  }
+
+  .googleAuthBtn {
+    padding: 12px 19px;
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .titleText {
+    font-weight: 500;
+    font-size: 5.5rem;
+    letter-spacing: 6px;
+  }
+
+  #neonOpenImg {
+    top: 30px;
+    left: -40px;
+    width: 32vh;
+  }
+
+  .buttonContainer {
+    margin-top: 0;
+  }
+
+  .startPlayingBtn {
+    font-size: 0.7rem;
+    padding: 12px 19px;
+    margin-bottom: 34px;
+
+    border: 2px solid #626262;
+  }
+
+  .googleAuthBtn {
+    padding: 12px 19px;
+    font-size: 0.7rem;
+
+    border: 2px solid #626262;
+  }
+  .googleAuthBtn i {
+    margin-left: 8px;
+    font-size: 1.1rem;
+  }
+}

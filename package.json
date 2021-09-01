@@ -1,0 +1,58 @@
+{
+  "name": "neon-games-react",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "animejs": "^3.2.1",
+    "body-parser": "^1.19.0",
+    "confetti-js": "^0.0.18",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "framer-motion": "^4.1.17",
+    "glider-js": "^1.7.7",
+    "http-proxy-middleware": "^0.19.1",
+    "mongoose": "^5.13.3",
+    "mongoose-find-or-create": "^1.3.1",
+    "nodemon": "^2.0.12",
+    "passport": "^0.4.1",
+    "passport-google-oauth20": "^2.0.0",
+    "path": "^0.12.7",
+    "react": "^17.0.2",
+    "react-delay-link": "^1.1.6",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.1.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "server": "nodemon server/server.js"
+  },
+  "proxy": "http://localhost:3001",
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

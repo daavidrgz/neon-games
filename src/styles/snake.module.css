@@ -1,0 +1,558 @@
+/* SNAKE PREV */
+.snakeTitle a {
+	position: relative;
+	text-decoration: none;
+	cursor: pointer;
+
+	color: #3dffbe;
+  text-shadow: 0 0 5px #00ff80, 0 0 50px #00ff80c2, 0 0 80px #00ff8083;
+}
+.titleBorder {
+	position: absolute;
+	top: 95%;
+	left: 0;
+
+	height: 4px;
+	width: 0;
+	
+	border-radius: 10px;
+	background-color: #3dffbe;
+	box-shadow: 0 0 5px #00ff80, 0 0 50px #00ff80c2, 0 0 80px #00ff8083;
+
+	transition: 0.2s;
+}
+.snakeTitle a:hover .titleBorder {
+	width: 100%;
+}
+.previewContainer {
+	border: 5px solid #2abbff;
+	box-shadow: 0 0 5px #00aeff, 0 0 40px #00aeff66, 0 0 80px #00aeff11;
+}
+
+.snakeAssetPrev {
+	position: absolute;
+	font-weight: 500;
+	font-size: 100px;
+
+	top: 10px;
+	right: 10px;
+
+	color: #fffbd7;
+	text-shadow: 0 0 5px #c3ff38, 0 0 10px #c3ff38, 0 0 150px #c3ff38;
+
+	animation: hueRotate 10s cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
+	transform: rotate(40deg);
+}
+@keyframes hueRotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+	50% {
+		filter: hue-rotate(50deg);
+	}
+  100% {
+    filter: hue-rotate(0deg);
+  }
+}
+
+.mainContainerPrev {
+	width: 80%;
+	height: 80%;
+	z-index: 1;
+
+	display: grid;
+  gap: 0px 0px;
+}
+
+
+
+
+
+
+
+/* SNAKE GAME */
+.externalContainer {
+	position: relative;
+	height: calc(100vh - 120px);
+
+	display: flex;
+	justify-content: space-around;
+	
+	overflow: hidden;
+}
+
+.leftContainer {
+	position: relative;
+	width: 20%;
+	height: 100%;
+}
+.sectionTitleText {
+	position: relative;
+	user-select: none;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	width: max-content;
+	
+	font-family: 'Nocturne';
+	font-weight: 900;
+	font-size: 3.5rem;
+	letter-spacing: 3px;
+}
+.underline {
+	position: absolute;
+	width: 100%;
+	height: 3px;
+	bottom: 0;
+	left: 0;
+
+	border-radius: 10px;
+}
+.scoreContainer {
+	width: 100%;
+	margin-top: 7vh;
+}
+.pointsText {
+	color: #ff9eb6;
+	text-shadow: 0 0 5px #ff0037, 0 0 15px #ff0037, 0 0 150px #ff0037;
+}
+.pointsIcon {
+	margin-left: 20px;
+	font-size: 1.8rem;
+	font-weight: 900;
+}
+.pointsText .underline {
+	background-color: #ff9eb6;
+	box-shadow: 0 0 5px #ff0037, 0 0 15px #ff0037, 0 0 150px #ff0037;
+}
+
+.scoreAndLevel {
+	user-select: none;
+	text-align: center;
+	display: block;
+	margin-top: 30px;
+
+	color: #40bb92;
+	text-shadow: 0 0 5px #00ff809b, 0 0 15px #00ff8093, 0 0 150px #00ff80a1;
+	font-family: 'Lato';
+	font-weight: 600;
+	font-size: 2rem;
+}
+#snakeScore {
+	color: #3dffbe;
+	text-shadow: 0 0 5px #00ff80, 0 0 15px #00ff80, 0 0 150px #00ff80;
+	font-family: 'Lato';
+	font-weight: 600;
+	font-size: 2rem;
+}
+
+.levelContainer {
+	width: 100%;
+	margin-top: 7vh;
+}
+.levelText {
+	color: #acd0ff;
+	text-shadow: 0 0 5px #0099ff, 0 0 15px #0099ff, 0 0 150px #0099ff;
+}
+.levelIcon {
+	margin-left: 20px;
+	font-size: 1.8rem;
+	font-weight: 900;
+}
+.levelText .underline {
+	background-color: #acd0ff;
+	box-shadow: 0 0 5px #0099ff, 0 0 15px #0099ff, 0 0 150px #0099ff;
+}
+
+#snakeLevel {
+	user-select: none;
+	text-align: center;
+
+	color: #3dffbe;
+	text-shadow: 0 0 5px #00ff80, 0 0 15px #00ff80, 0 0 150px #00ff80;
+	font-family: 'Lato';
+	font-weight: 600;
+	font-size: 2rem;
+}
+
+.scoresContainer {
+	width: 100%;
+	margin-top: 7vh;
+}
+.scoresText {
+	color: #ffcd94;
+	text-shadow: 0 0 5px #ff8800, 0 0 15px #ff880071, 0 0 150px #ff8800;
+}
+.scoresIcon {
+	margin-left: 20px;
+	font-size: 1.8rem;
+	font-weight: 900;
+}
+.scoresText .underline {
+	background-color: #ffcd94;
+	box-shadow: 0 0 5px #ff8800, 0 0 15px #ff8800, 0 0 150px #ff8800;
+
+}
+
+.scoresTable {
+	width: 100%;
+	margin-top: 40px;
+	padding: 15px;
+	text-align: center;
+
+	border-radius: 15px;
+	border: 3px solid #ffcd94;
+	box-shadow: 0 0 5px #ff8800, 0 0 15px #ff880071, 0 0 40px #ff8800, inset 0 0 20px #ff8800;
+
+	font-family: 'Lato';
+	font-weight: 600;
+	font-size: 1.1rem;
+
+	color: #ff9eb6;
+	text-shadow: 0 0 5px #ff0037, 0 0 15px #ff0037, 0 0 150px #ff0037;
+
+	animation: show forwards 0.4s;
+}
+@keyframes show {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.firstRowScores {
+	margin-bottom: 10px;
+}
+.scoresTable th {
+	padding-bottom: 15px;
+}
+.scoresTable th span {
+	position: relative;
+}
+.scoresTable th span span {
+	display: block;
+	height: 2px;
+	width: 100%;
+	border-radius: 20px;
+
+	background-color: #ff9eb6;
+	box-shadow: 0 0 5px #ff0037, 0 0 15px #ff0037;
+
+	position: absolute;
+	bottom: -1px;
+	left: 0;
+}
+.scoresMessage {
+	width: 100%;
+	margin-top: 40px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	color: #acd0ff;
+	text-shadow: 0 0 5px #0099ff, 0 0 15px #0099ff, 0 0 150px #0099ff;
+	font-size: 1.4rem;
+
+	animation: show forwards 0.4s;
+}
+.scoresMessage span {
+	display: inline-block;
+	margin-right: 10px;
+
+	font-family: 'Lato';
+	font-weight: 600;
+}
+
+.startButton {
+	cursor: pointer;
+	position: absolute;
+	bottom: 8px;
+	left: 50%;
+	transform: translate(-50%, 120%);
+	opacity: 0;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: max-content;
+	padding: 8px 18px;
+
+	border-radius: 100px;
+	background-color: #0c0c0c;
+	border: 3px solid #626262;
+
+	font-family: 'Lato';
+	font-size: 1.3rem;
+	font-weight: 600;
+	color: #626262;
+
+	transition: all 0.2s, transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.startButton i {
+	font-weight: 900;
+	margin-left: 10px;
+}
+.startButton:hover {
+	border-color: #44ff8c;
+	box-shadow: 0 0 5px #00ff88, 0 0 15px #00ff88af;
+
+	color: #53ffaf;
+	text-shadow: 0 0 5px #00ff55be, 0 0 20px #00ff55b2;
+}
+.showStartButton {
+	transform: translate(-50%, 0);
+	opacity: 1;
+}
+
+.mainContainer {
+	z-index: 1;
+	width: 50%;
+	height: 75vh;
+	margin-top: 5vh;
+
+	display: grid;
+  gap: 0px 0px;
+
+	box-shadow: 0 0 100px #fffb001a;
+}
+
+.cell {
+	position: relative;
+	user-select: none;
+	border: 1px solid #141414d3;
+	border-radius: 5px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	background-color: #383838;
+	transition: 0.1s
+}
+.cellActive1 {
+	background-color: #8dccff;
+	box-shadow: 0 0 5px #1a63d8, 0 0 20px #1aa2d8;
+} .cellActive2 {
+	background-color: #9aff8d;
+	box-shadow: 0 0 5px #1ad823, 0 0 20px #1ad82a;
+} .cellActive3 {
+	background-color: #ff8dbd;
+	box-shadow: 0 0 5px #d81a73, 0 0 20px #d81a73;
+} .cellActive4 {
+	background-color: #ee9866;
+	box-shadow: 0 0 5px #d8601a, 0 0 20px #d8601a;
+} .cellActive5 {
+	background-color: #fdff8d;
+	box-shadow: 0 0 5px #d8d51a, 0 0 20px #d8d51a;
+} .cellActive6 {
+	background-color: #d18dff;
+	box-shadow: 0 0 5px #b21ad8, 0 0 20px #b21ad8;
+} .cellActive7 {
+	background-color: #8dffa6;
+	box-shadow: 0 0 5px #0df378, 0 0 20px #0df378;
+} .cellActive8 {
+	background-color: #ff8d8d;
+	box-shadow: 0 0 5px #d81a1a, 0 0 20px #d81a1a;
+} .cellActive9 {
+	background-color: #8dfbff;
+	box-shadow: 0 0 5px #1ad2d8, 0 0 20px #1ad2d8;
+} .cellActive10 {
+	background-color: #ddffb1;
+	box-shadow: 0 0 5px #9fd81a, 0 0 20px #9fd81a;
+} .cellActive11 {
+	background-color: #a56dff;
+	box-shadow: 0 0 5px #6f16ff, 0 0 20px #6f16ff;
+} .cellActive12 {
+	background-color: #ffa48d;
+	box-shadow: 0 0 5px #ff5226, 0 0 20px #ff5226;
+}
+
+.cellActiveHead {
+	background-color: #0400da;
+	box-shadow: 0 0 5px #0400da, 0 0 20px #0400da;
+}
+
+.foodIcon {
+	position: absolute;
+	font-size: 1.5rem;
+	font-weight: 900;
+	color: #1cc016;
+	text-shadow: 0 0 5px #1cc016, 0 0 15px #1cc016;
+}
+
+.rightContainer {
+	position: relative;
+	width: 20%;
+	height: 100%;
+}
+.snakeAsset {
+	position: absolute;
+	top: 80px;
+	right: 80px;
+
+	font-size: 15rem;
+	color: #8ddfff;
+	text-shadow: 0 0 5px #1aa2d8, 0 0 20px #1aa2d8, 0 0 120px #1aa2d8;
+}
+.snakeContainer {
+	user-select: none;
+	position: absolute;
+	padding: 20px;
+
+	bottom: 250px;
+	left: 50px;
+
+	transform: rotate(5deg);
+
+	border: 5px solid #3dffbe;	
+	border-radius: 40px;
+	box-shadow: 0 0 5px #00ff80, 0 0 50px #00ff80, inset 0 0 50px #00ff80;
+}
+.snakeContainer span {
+	font-size: 4vw;
+	letter-spacing: 5px;
+	font-family: 'Nocturne Rough';
+
+	color: #dffbf6;
+	text-shadow: 0 0 5px #B8DFD8, 0 0 10px #B8DFD8,0 0 100px #B8DFD8;
+}
+
+/* GAME OVER POPUP */
+.gameOverPopup {
+	z-index: 2;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+
+	left: 100%;
+	visibility: hidden;
+  background-image: linear-gradient(#000000d3, #000000d3), url("../assets/bricks.jpg");
+	background-size: cover;
+  background-repeat: no-repeat;
+
+	transition: all 0.5s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+.showGameOverPopup {
+	left: 0;
+	visibility: visible;
+}
+.gameOverContainer {
+	width: 50vw;
+	margin: 25vh auto 0;
+
+	text-align: center;
+
+	border-radius: 50px;
+	border: 3px solid #ff65ff;
+	box-shadow: 0 0 5px #f125f1, 0 0 30px #f125f1, inset 0 0 20px #f125f1;
+
+	padding: 50px;
+}
+.gameOverText {
+	display: block;
+
+	color: #ff4242;
+	text-shadow: 0 0 5px #f12525, 0 0 20px #f12525, 0 0 120px #f12525;
+
+	font-family: 'Nocturne';
+	font-size: 5rem;
+}
+.hr {
+	display: block;
+	height: 5px;
+	width: 80%;
+	margin: 50px auto;
+
+	border-radius: 5px;
+	background-color: #ffa57c;
+	box-shadow: 0 0 5px #ff5100, 0 0 15px #ff5100, 0 0 50px #ff5100;
+}
+#gameOverSnakeLevel {
+	display: inline-block;
+	margin-right: 50px;
+
+	color: #8ddfff;
+	text-shadow: 0 0 5px #1aa2d8, 0 0 15px #1aa2d8, 0 0 150px #1aa2d8;
+	font-family: 'Lato';
+	font-weight: 600;
+	font-size: 2rem;
+}
+#gameOverSnakeScore {
+	color: #3dffbe;
+	text-shadow: 0 0 5px #00ff80, 0 0 15px #00ff80, 0 0 150px #00ff80;
+	font-family: 'Lato';
+	font-weight: 600;
+	font-size: 2rem;
+}
+
+.closeButton {
+	cursor: pointer;
+	position: relative;
+	margin: 50px auto;
+	opacity: 1;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	width: max-content;
+	padding: 10px 20px;
+
+	border-radius: 100px;
+	background-color: #0c0c0c;
+	border: 3px solid #626262;
+
+	font-family: 'Lato';
+	font-size: 1.2rem;
+	font-weight: 600;
+	color: #626262;
+
+	transition: all 0.2s, left 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.closeButton i {
+	font-weight: 900;
+	position: relative;
+	top: 1px;
+	font-size: 0.9rem;
+	margin-left: 8px;
+}
+.closeButton:hover {
+	border-color: #ff0088;
+	box-shadow: 0 0 5px #ff0088, 0 0 15px #ff0088;
+
+	color: #ff0088;
+	text-shadow: 0 0 10px #ff0088,0 0 150px #ff0088;
+}
+
+
+@media screen and (max-width: 992px) {
+
+}
+@media screen and (max-width: 550px) {
+	.snakeTitle a {
+		text-shadow: 0 0 5px #00ff80, 0 0 40px #00ff80c2;
+	}
+	.titleBorder {
+		height: 3px;
+		box-shadow: 0 0 5px #00ff80, 0 0 40px #00ff80c2;
+	}
+	.previewContainer {
+		border: 3px solid #2abbff;
+		box-shadow: 0 0 5px #00aeff, 0 0 15px #00aeffb9;
+	}
+	.snakeAssetPrev {
+		font-size: 50px;
+	}
+
+	.foodIcon {
+		font-size: 1rem;
+		text-shadow: 0 0 5px #1cc016, 0 0 15px #1cc016;
+	}
+	
+}
