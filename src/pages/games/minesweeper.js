@@ -309,10 +309,8 @@ export default function Minesweeper() {
 		.then(res => {
 			if ( res === 'Auth required' )
 				setScoreElem(<AuthReqMsg />)
-
 			else if ( res.length === 0 )
 				setScoreElem(<NothingToShowMsg />)
-
 			else
 				setScoreElem(<ScoresTable scores={res}/>)
 		});

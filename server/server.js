@@ -162,8 +162,6 @@ app.post('/api/add-minesweeper-score', function(req, res) {
 			}
 			newScores[i] = newMinesweeperScore;
 
-			console.log(newScores);
-
 			user.minesweeperScores = newScores;
 			user.save();
 			res.status(200).json('OK');
