@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import styles from '../styles/home.module.css'
 import anime from 'animejs';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import OpenNeonImg from '../assets/Open Neon.svg';
 
 export default function Home() {
@@ -32,7 +32,6 @@ export default function Home() {
       opacity: ['0', '1'],
       duration: 700,
     });
-
 
     anime({
       targets: document.getElementById(styles.neonOpenImg),

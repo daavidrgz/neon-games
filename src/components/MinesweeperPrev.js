@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { getNumColor } from './MinesweeperCell';
 import styles from '../styles/minesweeper.module.css';

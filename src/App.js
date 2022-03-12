@@ -1,3 +1,4 @@
+import React from 'react';
 import Music from './components/Music'
 import Home from './pages/home'
 import Games from './pages/games/games'

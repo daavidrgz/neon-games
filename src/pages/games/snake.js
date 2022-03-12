@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import anime from 'animejs';
 import styles from '../../styles/snake.module.css'
 

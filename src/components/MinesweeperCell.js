@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from '../styles/minesweeper.module.css';
 
 function getNumColor(num) {

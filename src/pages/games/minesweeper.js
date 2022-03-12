@@ -1,6 +1,6 @@
 import anime from 'animejs';
 import ConfettiGenerator from 'confetti-js';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { startClock, stopClock, resetClock } from '../../components/Clock'
 import styles from '../../styles/minesweeper.module.css'
 import Cell from '../../components/MinesweeperCell';
@@ -212,7 +212,7 @@ export default function Minesweeper() {
 	function showNextCells([i, j]) {
 		getAroundCells({i: parseInt(i), j: parseInt(j)}).forEach(cell => {
 			const elem = document.getElementById(`${cell.i} ${cell.j}`);
-			elem?.click();
+			elem.click();
 		});
 	}
 

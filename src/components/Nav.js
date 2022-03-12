@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import DelayLink from 'react-delay-link'
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import anime from 'animejs'
 import styles from '../styles/nav.module.css'
 
