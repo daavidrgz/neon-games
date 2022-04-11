@@ -32,6 +32,7 @@ export default function Snake() {
 			foodCells.push({row: row, col: col});
 		}
 	}
+	
 	function setFood() {
 		generateFood();
 
@@ -161,8 +162,7 @@ export default function Snake() {
 
 	function changeDirection(e) {
 		const keyCodes = [37, 38, 39, 40];
-		if ( keyCodes.includes(e.keyCode) )
-			e.preventDefault();
+		keyCodes.includes(e.keyCode) && e.preventDefault();
 
 		if ( e.keyCode === 37 && direction.row !== 0 && direction.col !== 1 ) // Left arrow
 			direction = {row: 0, col: -1}
@@ -213,7 +213,6 @@ export default function Snake() {
 
 	async function getScores() {
 		const apiRes = await fetch('/api/get-snake-scores');
-		
 		const res = await apiRes.json();
 		(res === 'Auth required') ? setScores(null) : setScores(res)
 	}
@@ -245,7 +244,6 @@ export default function Snake() {
 						<i className="icon-close" />
 					</button>
 				</div>
-
 
 				<div className={styles.leftContainer}>
 					<div className={styles.scoreContainer}>

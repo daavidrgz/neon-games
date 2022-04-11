@@ -10,15 +10,9 @@ import Snake from './snake'
 import Minesweeper from './minesweeper'
 
 function GamesHome() {
-
 	useEffect(() => {
 		const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-		let duration;
-		
-		if ( vw > 1000 )
-			duration=0.3;
-		else
-			duration=0.8;
+		let duration = vw > 1000 ? 0.3 : 0.8;
 
 		new Glider(document.querySelector(`.${styles.glider}`), {
 			duration: duration,

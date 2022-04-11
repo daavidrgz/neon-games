@@ -130,8 +130,6 @@ export default function Minesweeper() {
 	let cellsClicked = 0;
 	let notClickable = false;
 
-
-
 	function getAroundCells({i, j}) {
 		return [{i: i-1, j: j-1}, {i: i-1, j: j}, {i: i-1, j: j+1},
 			{i: i, j: j-1}, {i: i, j: j+1}, {i: i+1, j: j-1}, {i: i+1, j: j}, {i: i+1, j: j+1}];
@@ -338,7 +336,6 @@ export default function Minesweeper() {
 		document.getElementById(id).classList.remove(styles.showWinLosePopup);
 	}
 	
-
 	useEffect(() => {
 		const confettiSettings = { target: styles.confettiCanvas, rotate: true };
 		const confetti = new ConfettiGenerator(confettiSettings);

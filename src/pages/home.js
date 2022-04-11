@@ -51,7 +51,6 @@ export default function Home() {
         <img src={OpenNeonImg} alt="" />
       </div>
       
-
       <div className={styles.titleTextContainer}>
         <span className={styles.titleText} id={styles.theText}>The</span>
         <span className={styles.titleText} id={styles.neonText}>Neon</span>
@@ -70,8 +69,6 @@ export default function Home() {
           <i className="icon-google" />
         </a>
       </div>
-
-      
     </div>
   )
 }

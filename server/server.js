@@ -23,9 +23,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.set('useUnifiedTopology', true);
 mongoose.connect('mongodb+srv://admin-david:' + process.env.DB_PASS + '@cluster0.gm6au.mongodb.net/neonGamesDB', { useNewUrlParser: true });
-mongoose.set('useCreateIndex', true);
 
 const minesweeperScoreSchema = new mongoose.Schema({
 	timeStr: String,
