@@ -3,7 +3,7 @@ import anime from 'animejs';
 import { useEffect, useState } from "react";
 
 export default function Music() {
-	const [mutedState, setMutedState] = useState(false);
+	const [mutedState, setMutedState] = useState(true);
 	let musicCount = 1;
 
 	function manageVolume() {
