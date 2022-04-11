@@ -9,7 +9,7 @@ const findOrCreate = require('mongoose-find-or-create');
 const path = require('path');
 
 const app = express();
-app.use('/static', express.static(__dirname + '../public'));
+app.use('/static', express.static(__dirname + '../build/static'));
 app.use(require("body-parser").json());
 app.use(cors());
 app.use(session({
