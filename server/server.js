@@ -64,7 +64,7 @@ passport.deserializeUser(function(id, done) {
 passport.use(new GoogleStrategy({
 	clientID: process.env.CLIENT_ID,
 	clientSecret: process.env.CLIENT_SECRET,
-	callbackURL: "http://localhost:3001/auth/google/main",
+	callbackURL: "https://the-neon-games.herokuapp.com/auth/google/main",
 },
 function(accessToken, refreshToken, profile, cb) {
 	let { email, picture, name, sub: googleId } = profile._json;
@@ -75,7 +75,7 @@ function(accessToken, refreshToken, profile, cb) {
 
 app.get('/auth/google', passport.authenticate('google', {scope: ['profile', 'email']}));
 app.get('/auth/google/main', passport.authenticate('google'), function(req, res) {
-	res.redirect("http://localhost:3000/games");
+	res.redirect("/games");
 });
 
 app.get('/auth/logout', function(req, res) {
