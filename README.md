@@ -19,7 +19,7 @@ gives you good visual effects and a relaxing experience while you game.
 It uses:
 * A [Mongo](https://github.com/mongodb/mongo) database to store scores and users
 * A backend in Node using [Express.js](https://github.com/expressjs/express) and [Passport.js](https://github.com/jaredhanson/passport) to handle google OAuth
-* A frontend in pure [React](https://github.com/facebook/react) with declarative routing featuring [React Router](https://github.com/remix-run/react-router) 
+* A frontend in pure [React](https://github.com/facebook/react) with declarative routing, featuring [React Router](https://github.com/remix-run/react-router) 
 </details>
 
 #
