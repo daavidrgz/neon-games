@@ -10,6 +10,8 @@ const path = require('path');
 
 const app = express();
 app.use('/static', express.static(__dirname + '/../build/static'));
+app.use('/audio', express.static(__dirname + '/../build/audio'));
+app.use('/icons', express.static(__dirname + '/../build/icons'));
 app.use(require("body-parser").json());
 app.use(cors());
 app.use(session({
@@ -215,7 +217,7 @@ app.get('/api/get-snake-scores', function(req, res) {
 	});
 });
 
-app.get('/', function(req, res) {
+app.get('/*', function(req, res) {
 	res.sendFile(path.resolve(__dirname + '/../build/index.html'));
 });
 

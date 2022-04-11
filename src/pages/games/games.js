@@ -10,11 +10,15 @@ import Snake from './snake'
 import Minesweeper from './minesweeper'
 
 function GamesHome() {
+	let gliderRef = React.createRef();
+
 	useEffect(() => {
 		const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
 		let duration = vw > 1000 ? 0.3 : 0.8;
 
-		new Glider(document.querySelector(`.${styles.glider}`), {
+		console.log(gliderRef)
+
+		new Glider(gliderRef.current, {
 			duration: duration,
 			dots: document.querySelector(`.${styles.gliderDots}`),
 			arrows: {
@@ -25,16 +29,15 @@ function GamesHome() {
 			dragVelocity: 2,
 			scrollLock: true,
 			rewind: true
-
 		});
-	}, []);
+	}, [gliderRef]);
 
 	return (
 		<>
 			<div className={styles.gliderContainer}>
 				<button aria-label="Previous" className={styles.gliderPrev}><span>«</span></button>
 
-				<div className={styles.glider}>
+				<div className={styles.glider} ref={gliderRef}>
 					<MinesweeperPrev />
 					<SnakePrev />
 				</div>
@@ -85,7 +88,7 @@ export default function Games() {
 							transition={{duration: 0.25}}
 						>
 							{/* Forcing to refresh glider js */}
-							<GamesHome key={Math.random()} />
+							<GamesHome />
 						</motion.div>
 					</Route>
 				</Switch>

@@ -61,7 +61,7 @@ export default function Music() {
 
 	return (
 		<>
-			<audio id="bg-music" src={`/audio/bgmusic${musicCount}.mp3`} autoPlay>
+			<audio id="bg-music" src={`/audio/bgmusic${musicCount}.mp3`}>
 					Your browser does not support the
           <code>audio</code> element.
 			</audio>
