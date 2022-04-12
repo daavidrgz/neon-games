@@ -16,8 +16,6 @@ function GamesHome() {
 		const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
 		let duration = vw > 1000 ? 0.3 : 0.8;
 
-		console.log(gliderRef)
-
 		new Glider(gliderRef.current, {
 			duration: duration,
 			dots: document.querySelector(`.${styles.gliderDots}`),

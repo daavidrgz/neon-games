@@ -271,9 +271,9 @@
 .startButton {
 	cursor: pointer;
 	position: absolute;
-	bottom: 8px;
 	left: 50%;
-	transform: translate(-50%, 120%);
+	bottom: 2%;
+	transform: translateX(-50%);
 	opacity: 0;
 
 	display: flex;
@@ -292,7 +292,7 @@
 	font-weight: 600;
 	color: #626262;
 
-	transition: all 0.2s, transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	transition: all 0.2s, opacity 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .startButton i {
 	font-weight: 900;
@@ -306,7 +306,6 @@
 	text-shadow: 0 0 5px #00ff55be, 0 0 20px #00ff55b2;
 }
 .showStartButton {
-	transform: translate(-50%, 0);
 	opacity: 1;
 }
 

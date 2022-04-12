@@ -152,10 +152,9 @@
 	width: 100%;
 	height: 100%;
 
-	top: 100%;
-	left: 0;
+	top: 0;
+	left: 100%;
 	visibility: hidden;
-	display: none;
   background-image: linear-gradient(#000000d3, #000000d3), url("../assets/bricks.jpg");
 	background-size: cover;
   background-repeat: no-repeat;
@@ -163,9 +162,8 @@
 	transition: all 0.5s cubic-bezier(0.215, 0.610, 0.355, 1);
 }
 .showWinLosePopup {
-	top: 0;
+	left: 0;
 	visibility: visible;
-	display: block;
 }
 
 .winLoseExternalContainer {

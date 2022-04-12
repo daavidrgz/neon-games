@@ -210,7 +210,7 @@ export default function Minesweeper() {
 	function showNextCells([i, j]) {
 		getAroundCells({i: parseInt(i), j: parseInt(j)}).forEach(cell => {
 			const elem = document.getElementById(`${cell.i} ${cell.j}`);
-			elem.click();
+			elem && elem.click();
 		});
 	}
 
@@ -221,13 +221,14 @@ export default function Minesweeper() {
 
 		if ( cellsClicked === 0 ) startClock(document.getElementById('elapsedTime'));
 
-		if ( isbomb === 'true' ) { // LOSE
+		// LOSE
+		if ( isbomb === 'true' ) { 
 			loseGame(e.target.id);
 			return;
 		}
 
-		if ( e.target.children.length !== 1 ) // Remove the flag
-			e.target.removeChild(e.target.lastChild);
+		// Remove the flag
+		if ( e.target.children.length !== 1 ) e.target.removeChild(e.target.lastChild);
 
 		e.target.firstChild.classList.add(styles.showItem);
 		e.target.classList.add(styles.clicked);
@@ -238,13 +239,11 @@ export default function Minesweeper() {
 			return;
 		}
 
-		if ( num === '0' )
-			showNextCells(e.target.id.split(" "));
+		if ( num === '0' ) showNextCells(e.target.id.split(" "));
 	}
 
 	function cellRightClick(e) {
 		if ( notClickable ) return;
-
 		e.preventDefault();
 		if ( e.target.classList.contains(styles.clicked) ) return;
 
