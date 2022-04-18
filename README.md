@@ -4,7 +4,7 @@
 <summary><strong>&nbsp;P A G E &nbsp; L I N K &nbsp;🌎</strong></summary>
 <br>
 
-[Neon Games](https://the-neon-games.herokuapp.com/)
+[Neon Games →](https://the-neon-games.herokuapp.com/)
 </details>
 
 #
